@@ -42,46 +42,52 @@ HTML, CSS, JavaScriptCI/CD,GitHub Actions,Cloud Deployment,AWS Amplify Hosting,V
 └── README.md               # Documentation
 
 
+---
+
 ## ⚙️ GitHub Actions CI/CD Workflow
 This project uses a GitHub Actions workflow (main.yml) to automatically deploy changes.
 ✔ What the workflow does:
 
-Runs on every push to main
+- Runs on every push to main
 
-Installs dependencies (if any)
+- Installs dependencies (if any)
 
-Builds the project
+- Builds the project
 
-Uploads artifacts to AWS Amplify
+- Uploads artifacts to AWS Amplify
 
-Triggers deployment automatically
+- Triggers deployment automatically
 
+---
 
 ## ☁️ AWS Amplify Deployment
 This project is hosted on AWS Amplify using the following features:
 ✔ Amplify Hosting
 
-Automatic build & deploy from GitHub
+- Automatic build & deploy from GitHub
 
-Global CDN with HTTPS
+- Global CDN with HTTPS
 
-Zero-downtime deployments
+- Zero-downtime deployments
 
 ## ✔ Amplify Console
 You can view:
 
-Build logs
+- Build logs
 
-Deployment history
+- Deployment history
 
-Current active version
+- Current active version
 
+---
 
 ## 🔄 How CI/CD Works
 ### Push code → GitHub → GitHub Actions builds → Deploys to AWS Amplify → Live Website Updated
 
 No manual uploads needed.
 Every change you push becomes live automatically. 🚀
+
+---
 
 ## 📦 How to Run Locally
 ```
@@ -91,9 +97,12 @@ cd <repo-name>
 Open:
 index.html
 
+---
+
 That’s it!
 No frameworks — just HTML/CSS/JS.
 
+---
 
 ## 🙋‍♀️ Author
 ### Aakansha Hujare
