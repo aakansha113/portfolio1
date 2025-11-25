@@ -1,0 +1,239 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> 
+  <title>Aakansha — DevOps Portfolio</title>
+  <meta name="description" content="Premium animated DevOps portfolio — HTML, CSS, JS, Docker-ready." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="topbar container">
+      <div class="brand">
+        <div class="logo">
+  <img src="assets/avtar.jpg" alt="Aakansha Avatar" class="avatar">
+</div>
+
+        <div class="brand-text">
+          <div class="brand-name">Aakansha Hujare</div>
+          <div class="brand-sub">DevOps Engineer</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO (avatar left as requested) -->
+    <section id="hero" class="section hidden">
+      <div class="hero-inner">
+        <aside class="hero-avatar reveal" data-delay="0.06">
+          <!-- Local preview path (move to assets/photo.png when packaging) -->
+          <img class="avatar" src="assets/avtar.jpg" alt="Aakansha avatar">
+        </aside>
+
+        <div class="hero-card reveal" data-delay="0.05">
+          <div class="eyebrow">Hello — I'm</div>
+          <h1 class="big">Aakansha Hujare</h1>
+          <p class="lead">I design scalable cloud infrastructure, build secure CI/CD pipelines, automate deployments, and optimize DevOps workflows end-to-end. I specialize in containers, infrastructure-as-code, monitoring, and making engineering teams ship faster with confidence.</p>
+
+          <div class="cta">
+            <a class="btn" id="projects-btn" href="#projects">See projects</a>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT (expanded) -->
+    <section id="about" class="section hidden">
+      <div class="section-title"><h2>About</h2></div>
+      <div class="reveal" data-delay="0.04">
+        <p>
+          I am a DevOps engineer focused on building reliable, repeatable infrastructure and improving developer velocity.
+          I specialize in containerization (Docker), orchestration (Kubernetes), infrastructure-as-code (Terraform),
+          cloud platforms (AWS), CI/CD automation (GitHub Actions/Jenkins), and observability. I design pipelines that run
+          tests, security checks, and automated deployments with safe rollbacks. I mentor teams to adopt cloud-native practices,
+          reduce production toil, and increase release confidence.
+        </p>
+      </div>
+    </section>
+
+    <!-- SKILLS (inline official-color SVG icons centered in soft cloud circles) -->
+   
+
+      <!-- ================= SKILLS ================= -->
+<!-- Skills Section -->
+<section id="skills" class="section hidden">
+  <div class="section-title">
+    <h2>Skills</h2>
+  </div>
+<div class="skills">
+  <!-- Top Row -->
+  <div class="row top">
+    <div class="skill">
+      <div class="icon-circle">
+        <img src="/icons/terraform.svg" alt="Terraform">
+      </div>
+      <span>Terraform</span>
+    </div>
+    <div class="skill">
+      <div class="icon-circle">
+        <img src="icons/docker.svg" alt="Docker">
+      </div>
+      <span>Docker</span>
+    </div>
+    <div class="skill">
+      <div class="icon-circle">
+        <img src="icons/aws.svg" alt="AWS">
+      </div>
+      <span>AWS</span>
+    </div>
+    <div class="skill">
+      <div class="icon-circle">
+        <img src="icons/git.svg" alt="Git">
+      </div>
+      <span>Git</span>
+    </div>
+    <div class="skill">
+      <div class="icon-circle">
+        <img src="icons/github.svg" alt="GitHub">
+      </div>
+      <span>GitHub</span>
+    </div>
+  </div>
+
+  <!-- Bottom Row -->
+  <div class="row bottom">
+    <div class="skill">
+      <div class="icon-circle">
+        <img src="icons/linux.svg" alt="Linux">
+      </div>
+      <span>Linux</span>
+    </div>
+    <div class="skill">
+      <div class="icon-circle">
+        <img src="icons/kubernetes.svg" alt="Kubernetes">
+      </div>
+      <span>Kubernetes</span>
+    </div>
+    <div class="skill">
+      <div class="icon-circle">
+        <img src="icons/c.svg" alt="C">
+      </div>
+      <span>C</span>
+    </div>
+    <div class="skill">
+      <div class="icon-circle">
+        <img src="icons/python.svg" alt="Python">
+      </div>
+      <span>Python</span>
+    </div>
+  </div>
+</div>
+
+    <!-- PROJECTS -->
+    <!-- ================= PROJECTS ================= -->
+<section id="projects" class="section hidden">
+  <div class="section-title"><h2>Projects</h2></div>
+
+  <div class="projects-grid">
+
+    <article class="proj reveal" data-delay="0.05">
+      <h3>Dockerized ML Model</h3>
+      <p>Containerized a FastAPI ML model and automated builds with GitHub Actions.</p>
+      <div class="proj-actions">
+        <a class="gh-link" href="https://github.com/aakansha113/dockerized-ml-model" target="_blank" data-tooltip="View on GitHub">
+          <svg width="20" height="20" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="#181717" d="M49 .5A49 49 0 0 0 0 49.3c0 21.7 14 40 33.4 46.4c2.5.5 3.4-1.1 3.4-2.4v-8.5c-13.6 3-16.4-6.6-16.4-6.6c-2.2-5.6-5.4-7.1-5.4-7.1c-4.4-3 .3-3 .3-3c5 0 7.6 5.2 7.6 5.2c4.4 7.6 11.6 5.4 14.4 4.1c.5-3.2 1.7-5.4 3-6.6C28 68 17 63.6 17 45.7c0-5.6 2-10.2 5.2-13.8c-.5-1.3-2.2-6.7.5-13.8c0 0 4.1-1.3 13.5 5.2c3.9-1.1 8.2-1.7 12.4-1.7c4.2 0 8.5.6 12.4 1.7c9.3-6.6 13.5-5.2 13.5-5.2c2.7 7.1 1 12.5.5 13.8c3.2 3.6 5.2 8.2 5.2 13.8C81 63.7 70 68 60.6 68.9c1.7 1.6 3.4 4.9 3.4 10v14.9c0 1.4.9 3 3.4 2.4C84 89 98 71 98 49.3A49 49 0 0 0 49 .5"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="proj reveal" data-delay="0.12">
+      <h3>ToDo-Docker-Webapp</h3>
+      <p>A tiny static frontend app (HTML, CSS, JS) with a Dockerfile to build and run in container.</p>
+      <div class="proj-actions">
+        <a class="gh-link" href="https://github.com/aakansha113/dockerized-ml-model" target="_blank" data-tooltip="View on GitHub">
+          <svg width="20" height="20" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="#181717" d="M49 .5A49 49 0 0 0 0 49.3c0 21.7 14 40 33.4 46.4c2.5.5 3.4-1.1 3.4-2.4v-8.5c-13.6 3-16.4-6.6-16.4-6.6c-2.2-5.6-5.4-7.1-5.4-7.1c-4.4-3 .3-3 .3-3c5 0 7.6 5.2 7.6 5.2c4.4 7.6 11.6 5.4 14.4 4.1c.5-3.2 1.7-5.4 3-6.6C28 68 17 63.6 17 45.7c0-5.6 2-10.2 5.2-13.8c-.5-1.3-2.2-6.7.5-13.8c0 0 4.1-1.3 13.5 5.2c3.9-1.1 8.2-1.7 12.4-1.7c4.2 0 8.5.6 12.4 1.7c9.3-6.6 13.5-5.2 13.5-5.2c2.7 7.1 1 12.5.5 13.8c3.2 3.6 5.2 8.2 5.2 13.8C81 63.7 70 68 60.6 68.9c1.7 1.6 3.4 4.9 3.4 10v14.9c0 1.4.9 3 3.4 2.4C84 89 98 71 98 49.3A49 49 0 0 0 49 .5"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="proj reveal" data-delay="0.18">
+      <h3>Live-Vite-Docker-App</h3>
+      <p>A Vite.js frontend application fully Dockerized for dev + production use.</p>
+      <div class="proj-actions">
+        <a class="gh-link" href="https://github.com/aakansha113/Live-Vite-Docker-App" target="_blank" data-tooltip="View on GitHub">
+          <svg width="20" height="20" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="#181717" d="M49 .5A49 49 0 0 0 0 49.3c0 21.7 14 40 33.4 46.4c2.5.5 3.4-1.1 3.4-2.4v-8.5c-13.6 3-16.4-6.6-16.4-6.6c-2.2-5.6-5.4-7.1-5.4-7.1c-4.4-3 .3-3 .3-3c5 0 7.6 5.2 7.6 5.2c4.4 7.6 11.6 5.4 14.4 4.1c.5-3.2 1.7-5.4 3-6.6C28 68 17 63.6 17 45.7c0-5.6 2-10.2 5.2-13.8c-.5-1.3-2.2-6.7.5-13.8c0 0 4.1-1.3 13.5 5.2c3.9-1.1 8.2-1.7 12.4-1.7c4.2 0 8.5.6 12.4 1.7c9.3-6.6 13.5-5.2 13.5-5.2c2.7 7.1 1 12.5.5 13.8c3.2 3.6 5.2 8.2 5.2 13.8C81 63.7 70 68 60.6 68.9c1.7 1.6 3.4 4.9 3.4 10v14.9c0 1.4.9 3 3.4 2.4C84 89 98 71 98 49.3A49 49 0 0 0 49 .5"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+    <article class="proj reveal" data-delay="0.25">
+      <h3>Docker-Node-App</h3>
+      <p>A production-ready Node.js application fully containerized with Docker.</p>
+      <div class="proj-actions">
+        <a class="gh-link" href="https://github.com/aakansha113/Docker-node-app" target="_blank" data-tooltip="View on GitHub">
+          <svg width="20" height="20" viewBox="0 0 98 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="#181717" d="M49 .5A49 49 0 0 0 0 49.3c0 21.7 14 40 33.4 46.4c2.5.5 3.4-1.1 3.4-2.4v-8.5c-13.6 3-16.4-6.6-16.4-6.6c-2.2-5.6-5.4-7.1-5.4-7.1c-4.4-3 .3-3 .3-3c5 0 7.6 5.2 7.6 5.2c4.4 7.6 11.6 5.4 14.4 4.1c.5-3.2 1.7-5.4 3-6.6C28 68 17 63.6 17 45.7c0-5.6 2-10.2 5.2-13.8c-.5-1.3-2.2-6.7.5-13.8c0 0 4.1-1.3 13.5 5.2c3.9-1.1 8.2-1.7 12.4-1.7c4.2 0 8.5.6 12.4 1.7c9.3-6.6 13.5-5.2 13.5-5.2c2.7 7.1 1 12.5.5 13.8c3.2 3.6 5.2 8.2 5.2 13.8C81 63.7 70 68 60.6 68.9c1.7 1.6 3.4 4.9 3.4 10v14.9c0 1.4.9 3 3.4 2.4C84 89 98 71 98 49.3A49 49 0 0 0 49 .5"/>
+          </svg>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact-section">
+  <h2>Contact Me</h2>
+  <p>If you'd like to collaborate or discuss DevOps projects, feel free to reach out!</p>
+
+  <div class="contact-links">
+    <a href="mailto:xyz@gmail.com" target="_blank" class="contact-item">
+      <img src="icons/gmail.svg" alt="Gmail" />
+      Gmail
+    </a>
+
+    <a href="https://www.linkedin.com/in/aakansha-hujare-3bb397229/" 
+       target="_blank" class="contact-item">
+      <img src="/assets/linkedin.svg" alt="LinkedIn" />
+      LinkedIn
+    </a>
+
+    <a href="https://github.com/aakansha113" target="_blank" class="contact-item">
+      <img src="/icons/github.svg" alt="GitHub" />
+      GitHub
+    </a>
+  </div>
+</section>
+
+
+    <!-- <footer class="site-footer"><small>Built with HTML, CSS & JS — Docker-ready demo.</small></footer> -->
+  </main>
+
+  <button id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
