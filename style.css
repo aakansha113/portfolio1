@@ -1,343 +1,216 @@
+/* =========================
+   Aakansha — Optimized CSS
+   Fully responsive, clean, accessible
+   ========================= */
 
+/* --------- :root / tokens --------- */
 :root{
-  --bg: #0b1a2b;           /* deep navy page background */
-  --card: #16233a;         /* dark card background */
-  --header-footer: #101928;/* header/footer near-black */
-  --accent: #1e90ff;       /* bright blue for links/buttons */
-  --muted: #a0a8b5;        /* secondary text gray */
-  --highlight-aqua: #15daab;
-  --highlight-gold: #ffc700;
-  --error: #ff3860;
-  --success: #43d675;
+  --bg: #0b1a2b;
+  --card: #16233a;
+  --header: #101928;
+  --accent: #1e90ff;
+  --muted: #a0a8b5;
+  --accent-2: #15daab;
   --max-width: 1200px;
-  --radius: 12px;
+  --radius: 16px;
+  --gap: 18px;
+  --page-pad: 22px;
+  --text-light: #f0f3f7;
+  --shadow-strong: 0 18px 50px rgba(0,0,0,0.45);
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.30);
 }
 
-
-/* Base */
+/* --------- Base / Reset --------- */
 *{box-sizing:border-box}
 html,body{height:100%}
-body{margin:0;font-family:Inter,Arial,system-ui;line-height:1.5;background:var(--bg);color:#f0f3f7}
-a{color:var(--accent)}
-.container{max-width:var(--max-width);margin:0 auto;padding:22px}
-
-/* Header / Footer */
-header, .site-footer {
-  background: var(--header-footer);
-  color: #f0f3f7;
+body{
+  margin:0;
+  font-family:Inter,system-ui,Arial,sans-serif;
+  line-height:1.5;
+  background:var(--bg);
+  color:var(--text-light);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
-header{position:sticky;top:0;z-index:60;backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,0.5)}
-.site-footer{padding:26px 0;text-align:center;color:var(--muted)}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:var(--max-width);margin:0 auto;padding:var(--page-pad)}
 
-.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
-.brand{display:flex;gap:12px;align-items:center}
-.logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#00b4ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+/* reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce){
+  *{transition:none!important;animation:none!important}
+}
+
+/* --------- Header / Topbar --------- */
+header{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(16,25,40,0.9),rgba(16,25,40,0.85));backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(0,0,0,0.5)}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent),#00b4ff);color:#fff;font-weight:800}
 .brand-name{font-weight:800}
 .brand-sub{font-size:12px;color:var(--muted)}
-nav{display:flex;gap:14px;align-items:center}
-nav a{padding:8px 10px;border-radius:8px;font-weight:600;color:#f0f3f7}
-nav a.active{background:var(--accent);color:#0b1a2b}
+nav{display:flex;gap:12px;align-items:center}
+nav a{padding:8px 10px;border-radius:8px;font-weight:600;color:var(--text-light)}
+nav a.active{background:var(--accent);color:var(--bg)}
+#menu-btn{display:inline-grid;place-items:center;background:none;border:0;font-size:20px;padding:8px;border-radius:8px;color:var(--text-light)}
 
-/* Mobile menu */
-#menu-btn{display:inline-grid;place-items:center;background:none;border:0;font-size:20px;padding:8px;border-radius:8px}
-body.nav-open nav{position:fixed;inset:64px 0 0 0;background:linear-gradient(180deg,rgba(11,26,43,0.98),rgba(11,26,43,0.95));flex-direction:column;padding:24px;gap:12px}
-
-/* Layout / Sections */
-.section{padding:48px 16px}
-.hero-inner{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center}
-.hero-card {
-  background: var(--card);   /* dark card */
-  color: #f0f3f7;            /* light text */
-  border-radius: 16px;
-  padding: 22px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+/* mobile nav open state */
+body.nav-open nav{
+  position:fixed;
+  inset:64px 0 0 0;
+  background:linear-gradient(180deg, rgba(11,26,43,0.99), rgba(11,26,43,0.98));
+  flex-direction:column;
+  padding:20px;
+  gap:12px;
+  overflow-y:auto;
 }
 
+/* --------- Sections & cards --------- */
+.section{padding:48px 12px}
+.section-title{margin-bottom:12px}
+.section-title h2{margin:0;font-size:22px}
+
+/* Hero layout */
+.hero-inner{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:var(--gap);
+  align-items:center;
+}
+.hero-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:var(--shadow-soft);
+}
+.eyebrow{font-weight:600;color:var(--muted);margin-bottom:6px}
+.big{font-size:28px;margin:6px 0}
 .lead{color:var(--muted);margin:10px 0 0}
-.cta{margin-top:18px}
-.btn{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--accent);color:#0b1a2b;font-weight:700;text-decoration:none;margin-right:8px;transition:transform .18s ease, box-shadow .18s ease}
+.cta{margin-top:16px}
+
+/* Buttons */
+.btn{
+  display:inline-block;padding:10px 16px;border-radius:12px;background:var(--accent);color:var(--bg);font-weight:700;transition:transform .18s ease, box-shadow .18s ease;
+}
 .btn:focus{outline:3px solid rgba(30,144,255,0.14);outline-offset:2px}
-.btn:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,0.4)}
-.btn.ghost{background:transparent;color:var(--accent);border:2px solid rgba(30,144,255,0.3)}
-.btn.ghost:active, .btn.ghost:focus { background:var(--accent); color:#0b1a2b; border-color:transparent; transform:translateY(-3px); box-shadow:0 12px 28px rgba(0,0,0,0.35) }
+.btn:hover{transform:translateY(-3px);box-shadow:var(--shadow-soft)}
+.btn.ghost{background:transparent;color:var(--accent);border:2px solid rgba(30,144,255,0.18)}
 
 /* Avatar */
-.hero-avatar .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 18px 40px rgba(0,0,0,0.25);transition:transform .28s ease}
+.hero-avatar .avatar{
+  width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 18px 40px rgba(0,0,0,0.25);transition:transform .28s ease;
+}
 .hero-avatar .avatar:hover{transform:translateY(-6px) rotate(-0.6deg)}
 
-/* Section titles */
-.section-title{margin-bottom:12px}
-.section-title h2{margin:0;font-size:24px}
+/* --------- Skills (responsive rows) --------- */
+.skills{display:flex;flex-direction:column;align-items:center;gap:32px;padding-top:6px}
+.row{display:flex;gap:36px;flex-wrap:wrap;justify-content:center}
+.skill{display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;transition:transform .22s ease}
+.icon-circle{
+  width:92px;height:92px;border-radius:50%;background:var(--card);display:flex;align-items:center;justify-content:center;transition:transform .22s ease, background-color .22s ease;
+}
+.icon-circle img{width:44px;height:44px}
+.skill span{color:var(--text-light);font-size:14px;text-align:center}
+.skill:hover .icon-circle{transform:translateY(-6px);background:var(--accent)}
+.skill:hover span{color:var(--accent)}
 
-/* skillset */
-body {
-  background-color: #0b1a2b; /* page background */
-  font-family: sans-serif;
+/* --------- Projects grid --------- */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+.proj{
+  background:var(--card);padding:18px;border-radius:14px;box-shadow:var(--shadow-soft);transition:transform .18s,box-shadow .18s
+}
+.proj:hover{transform:translateY(-6px);box-shadow:var(--shadow-strong)}
+.proj h3{margin:0 0 6px}
+.proj p{color:var(--muted);font-size:14px;margin-bottom:12px}
+.proj-actions{display:flex;gap:8px;align-items:center}
+
+/* GitHub link */
+.gh-link{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,0.03);transition:transform .18s,background .18s;position:relative}
+.gh-link svg{width:20px;height:20px;display:block}
+.gh-link:hover{transform:translateY(-4px);background:var(--accent)}
+.gh-link[data-tooltip]:hover::after{
+  content:attr(data-tooltip);
+  position:absolute;left:50%;bottom:calc(100% + 10px);transform:translateX(-50%);
+  background:rgba(0,0,0,0.8);color:#fff;padding:6px 8px;border-radius:6px;font-size:13px;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,0.5);
 }
 
-.skills {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* center rows */
-  gap: 40px;           /* vertical gap between rows */
-}
+/* --------- Contact --------- */
+.contact-section{padding:54px 12px;text-align:center}
+.contact-links{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.contact-item{display:inline-flex;align-items:center;gap:8px;background:#01245a;padding:10px 16px;border-radius:10px;color:#fff;font-weight:600;transition:transform .18s,background .18s}
+.contact-item img, .contact-item svg{width:20px;height:20px}
+.contact-item:hover{transform:translateY(-3px);background:#000264}
 
-.row {
-  display: flex;
-  gap: 60px;           /* space between skills in a row */
-}
+/* --------- Back to top --------- */
+#backToTop{position:fixed;right:18px;bottom:18px;background:var(--accent);color:var(--bg);padding:10px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.45);opacity:0;transform:translateY(10px);transition:all .25s;pointer-events:none}
+#backToTop.visible{opacity:1;transform:none;pointer-events:auto}
 
-.row.bottom {
-  margin-left: 30px;   /* half the gap to center bottom row under top row */
-}
-
-.skill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;           /* space between icon and name */
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.icon-circle {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #16233a; /* dark circle background */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.icon-circle img {
-  width: 40px;
-  height: 40px;
-}
-
-.skill span {
-  color: #ffffff;
-  font-size: 14px;
-  text-align: center;
-}
-
-/* Hover effect */
-.skill:hover .icon-circle {
-  transform: translateY(-5px);
-  background-color: #1e90ff; /* accent color */
-}
-
-.skill:hover span {
-  color: #1e90ff;
-}
-
-
-/* Reduce vertical space between About and Skills */
-.skills.section {
-  padding-top: 10px;    /* reduce top padding */
-}
-
-.about.section {
-  padding-bottom: 10px; /* reduce bottom padding */
-}
-
-.about-card {
-  margin-bottom: 10px;  /* smaller space below about card */
-}
-
-/* Projects */
-/* ================= PROJECTS GRID ================= */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
-}
-
-.proj {
-  background: var(--card);
-  color: #f0f3f7;
-  padding: 22px;
-  border-radius: 16px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.3);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  position: relative;
-}
-
-.proj:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.4);
-}
-
-.proj h3 {
-  margin-top: 0;
-  margin-bottom: 6px;
-}
-
-.proj p {
-  color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 12px;
-}
-
-.proj-actions {
-  display: flex;
-  gap: 8px;
-}
-
-/* GitHub icon hover effect */
-.gh-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.05);
-  transition: all 0.2s ease;
-}
-
-.gh-link:hover {
-  transform: translateY(-3px);
-  background: var(--accent);
-}
-
-.gh-link svg {
-  width: 20px;
-  height: 20px;
-  fill: #fff;
-}
-
-/* GitHub link under project */
-.gh-link{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:transparent;border:0;cursor:pointer;text-decoration:none;transition:transform .18s, background .18s;position:relative}
-.gh-link svg{width:22px;height:22px;display:block}
-.gh-link:hover{transform:translateY(-4px);background:rgba(255,255,255,0.05)}
-.gh-link[data-tooltip]:hover::after{content:attr(data-tooltip);position:absolute;transform:translate(-50%,-8px);left:50%;bottom:calc(100% + 10px);background:rgba(0,0,0,0.8);color:white;padding:6px 8px;border-radius:6px;font-size:13px;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,0.5);z-index:40}
-
-/* Contact card */
-.contact-card{background:linear-gradient(135deg,#16233a,#1a2a44);padding:18px;border-radius:12px;box-shadow:0 10px 28px rgba(0,0,0,0.3);color:#f0f3f7}
-
-/* About card */
-/* About card box */
-.about-card {
-  background: var(--card);   /* dark card background */
-  color: #f0f3f7;            /* light text */
-  border-radius: 16px;
-  padding: 22px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3); /* soft shadow for depth */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.about-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.4);
-}
-
-
-/* Back to top */
-#backToTop{position:fixed;right:18px;bottom:18px;background:var(--accent);color:#0b1a2b;padding:10px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.5);opacity:0;transform:translateY(10px);transition:all .25s;pointer-events:none}
-#backToTop.visible{opacity:1;transform:none}
-
-/* Reveal helpers */
-.reveal{opacity:0;transform:translateY(12px);transition:all .55s cubic-bezier(.2,.9,.3,1)}
+/* --------- Reveal helpers (intersection observer) --------- */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .55s cubic-bezier(.2,.9,.3,1),transform .55s cubic-bezier(.2,.9,.3,1)}
 .reveal.visible{opacity:1;transform:none}
 section.hidden{opacity:0;transform:translateY(20px);transition:all .6s cubic-bezier(.2,.9,.3,1)}
 section.visible{opacity:1;transform:none}
 
-/* Responsive */
-@media(max-width:920px){.hero-inner{grid-template-columns:96px 1fr}.skills-icons{gap:22px}}
-@media(max-width:700px){.hero-inner{grid-template-columns:1fr;gap:14px}.hero-avatar{order:2}}
-@media(min-width:820px){.projects-grid{grid-template-columns:repeat(2,1fr)}#menu-btn{display:none}}
-@media(min-width:1080px){.section-title h2{font-size:26px}}
+/* --------- Responsive breakpoints --------- */
 
-/* ---- Premium AH Avatar ---- */
-.avatar-circle {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1e90ff, #00b7ff);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 20px;
-  color: #0b1a2b;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.35); /* ONLY soft dark shadow */
-  transition: 0.25s ease;
+/* Large screens (2-col projects) */
+@media (min-width: 820px){
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
 }
 
-.avatar-circle:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.45); /* dark shadow only */
+/* Tablet / small laptop */
+@media (max-width: 920px){
+  .hero-inner{grid-template-columns:96px 1fr}
+  .icon-circle{width:84px;height:84px}
 }
 
-.avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 25%;
-  object-fit: cover;
-  box-shadow: none; /* removed blue glow */
-  transition: 0.25s ease;
+/* Mobile layout changes */
+@media (max-width: 700px){
+  /* header */
+  #menu-btn{display:inline-grid}
+  nav{display:none}          /* nav hidden by default on small screens; body.nav-open shows it */
+  body.nav-open nav{display:flex}
+
+  /* hero stacks */
+  .hero-inner{grid-template-columns:1fr;gap:14px}
+  .hero-avatar{order:0;display:flex;justify-content:center}
+  .hero-avatar .avatar{width:96px;height:96px}
+  .big{font-size:22px}
+  .lead{font-size:14px}
+
+  /* skills -> single column feel with wrapped rows */
+  .row{gap:22px}
+  .icon-circle{width:76px;height:76px}
+  .skill span{font-size:13px}
+
+  /* projects -> single column cards */
+  .projects-grid{grid-template-columns:1fr}
+  .proj{padding:16px}
 }
 
-
-.avatar:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.45); /* dark shadow only */
-}
-/* ---- End Premium AH Avatar ---- */
-
-/* Contact Wrapper (centers and limits width) */
-.contact-wrap {
-  max-width: 650px;
-  margin: 0 auto;
-}
-
-
-.contact-section {
-  text-align: center;
-  padding: 60px 20px;
+/* Extra small phones */
+@media (max-width: 420px){
+  .container{padding:14px}
+  .brand-name{font-size:14px}
+  .hero-card{padding:16px}
+  .big{font-size:20px}
+  .lead{font-size:13px}
+  .icon-circle{width:68px;height:68px}
+  .skill span{font-size:12px}
+  .contact-item{padding:10px 12px}
+  .section{padding:28px 10px}
 }
 
-.contact-section h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+/* Slight desktop polish */
+@media (min-width: 1080px){
+  .section-title h2{font-size:26px}
+  .hero-card{padding:24px}
 }
 
-.contact-section p {
-  color: #666;
-  margin-bottom: 25px;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #01245a;
-  padding: 10px 18px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #111;
-  font-weight: 600;
-  transition: 0.3s ease;
-}
-
-.contact-item:hover {
-  background: #000264;
-  transform: translateY(-3px);
-}
-
-.contact-item img {
-  width: 22px;
-  height: 22px;
-}
-.contact-item svg {
-  width: 22px;
-  height: 22px;
-  fill: #111;
+/* Utility: visually-hidden (for accessibility) */
+.visually-hidden{
+  position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px;
 }
