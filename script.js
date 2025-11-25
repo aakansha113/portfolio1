@@ -16,6 +16,7 @@
     };
   };
 
+  
   // Smooth scroll for anchors
   $$('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {
