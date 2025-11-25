@@ -43,6 +43,15 @@ HTML, CSS, JavaScriptCI/CD,GitHub Actions,Cloud Deployment,AWS Amplify Hosting,V
 
 
 ---
+## 📦 How to Run Locally
+```
+git clone https://github.com/aakansha113/<repo-name>.git
+cd <repo-name>
+```
+Open:
+index.html
+
+---
 
 ## ⚙️ GitHub Actions CI/CD Workflow
 This project uses a GitHub Actions workflow (main.yml) to automatically deploy changes.
@@ -88,16 +97,6 @@ You can view:
 
 No manual uploads needed.
 Every change you push becomes live automatically. 🚀
-
----
-
-## 📦 How to Run Locally
-```
-git clone https://github.com/aakansha113/<repo-name>.git
-cd <repo-name>
-```
-Open:
-index.html
 
 ---
 
