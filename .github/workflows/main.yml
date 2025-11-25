@@ -1,0 +1,5 @@
+name: Portfolio Deployment
+on:
+  push:
+    branches:
+    - main
