@@ -46,6 +46,7 @@ HTML, CSS, JavaScriptCI/CD,GitHub Actions,Cloud Deployment,AWS Amplify Hosting,V
 
 ## ⚙️ GitHub Actions CI/CD Workflow
 This project uses a GitHub Actions workflow (main.yml) to automatically deploy changes.
+
 ✔ What the workflow does:
 
 - Runs on every push to main
@@ -62,6 +63,7 @@ This project uses a GitHub Actions workflow (main.yml) to automatically deploy c
 
 ## ☁️ AWS Amplify Deployment
 This project is hosted on AWS Amplify using the following features:
+
 ✔ Amplify Hosting
 
 - Automatic build & deploy from GitHub
