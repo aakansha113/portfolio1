@@ -31,6 +31,7 @@ HTML, CSS, JavaScriptCI/CD,GitHub Actions,Cloud Deployment,AWS Amplify Hosting,V
 
 ##  📁 Project Structure
 ```
+portfolio/
 ├── .github/
 │   └── workflows/
 │       └── main.yml        # GitHub Actions CI/CD pipeline
